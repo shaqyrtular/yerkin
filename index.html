@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="kk">
-<head>
+<html lang="kk"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Еркін &amp; Жанель — Той шақыруы</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&amp;family=Great+Vibes&amp;family=Montserrat:wght@300;400;500&amp;display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-height:100vh;overflow-x:hidden}
@@ -39,39 +38,31 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
 .loc-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:20px;text-align:center;color:#fff}
 .loc-name{font-family:'Great Vibes',cursive;font-size:38px;line-height:1;color:#fff}
 .loc-addr{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(255,255,255,.82);margin:6px 0 14px}
-.map-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 22px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.15);color:#fff;font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;backdrop-filter:blur(8px);cursor:pointer;transition:background .2s}
+.map-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 22px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.15);color:#fff;font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;backdrop-filter:blur(8px);transition:background .2s}
 .map-btn:hover{background:rgba(255,255,255,.28)}
 
-/* RSVP */
 .rsvp-card{background:#fff;border:1px solid rgba(150,110,90,.14);border-radius:20px;padding:28px 24px;box-shadow:0 12px 32px rgba(100,60,40,.07);text-align:center}
-.rsvp-title{font-family:'Cormorant Garamond',cursive;font-size:44px;color:#7a1e2e;margin:6px 0 8px}
+.rsvp-title{font-family:'Cormorant Garamond',serif;font-size:44px;color:#7a1e2e;margin:6px 0 8px}
 .rsvp-subtitle{font-family:'Cormorant Garamond',serif;font-size:16px;color:#9b7560;margin-bottom:28px;line-height:1.5}
 
-.rsvp-buttons{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:0}
-
+.rsvp-buttons{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .rsvp-btn{padding:18px 12px;border-radius:16px;border:1.5px solid;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all .22s;display:flex;flex-direction:column;align-items:center;gap:8px;line-height:1.3}
 .rsvp-btn .btn-icon{font-size:26px;line-height:1}
 .rsvp-btn .btn-text{font-size:13px;letter-spacing:.04em}
-.rsvp-btn .btn-sub{font-size:11px;font-weight:400;opacity:.75;font-family:'Cormorant Garamond',serif;font-style:italic}
 
 .btn-yes{background:#fdf7f0;border-color:rgba(122,30,46,.25);color:#7a1e2e}
 .btn-yes:hover{background:#7a1e2e;color:#fff;border-color:#7a1e2e;transform:translateY(-2px);box-shadow:0 8px 24px rgba(122,30,46,.22)}
-
 .btn-no{background:#fdf7f0;border-color:rgba(122,30,46,.25);color:#7a1e2e}
 .btn-no:hover{background:#7a1e2e;color:#fff;border-color:#7a1e2e;transform:translateY(-2px);box-shadow:0 8px 24px rgba(122,30,46,.22)}
 
-.btn-yes.selected{background:#7a1e2e;color:#fff;border-color:#7a1e2e;box-shadow:0 8px 24px rgba(122,30,46,.22)}
-.btn-no.selected{background:#f0ebe4;border-color:rgba(150,110,90,.4);color:#6a4f40}
-
-/* SUCCESS */
 #successMsg{display:none;padding:12px 0 4px}
 #successMsg .success-icon{font-size:40px;margin-bottom:8px}
-#successMsg .success-title{font-family:'Cormorant Garamond',cursive;font-size:40px;color:#7a1e2e;line-height:1}
+#successMsg .success-title{font-family:'Cormorant Garamond',serif;font-size:40px;color:#7a1e2e;line-height:1}
 #successMsg .success-text{font-family:'Cormorant Garamond',serif;font-size:17px;color:#9b7560;margin-top:8px;line-height:1.6}
 
 #noMsg{display:none;padding:12px 0 4px}
 #noMsg .no-icon{font-size:40px;margin-bottom:8px}
-#noMsg .no-title{font-family:'Cormorant Garamond',cursive;font-size:40px;color:#9b7560;line-height:1}
+#noMsg .no-title{font-family:'Cormorant Garamond',serif;font-size:40px;color:#9b7560;line-height:1}
 #noMsg .no-text{font-family:'Cormorant Garamond',serif;font-size:17px;color:#9b7560;margin-top:8px;line-height:1.6}
 
 .footer{padding:32px 24px 48px;text-align:center}
@@ -84,7 +75,7 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
 <div class="page">
 
   <section class="hero">
-    <img class="hero-bg" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80&auto=format" alt="">
+    <img class="hero-bg" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&amp;q=80&amp;auto=format" alt="">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="event-label">Үйлену тойына шақырамыз</p>
@@ -116,11 +107,11 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
   <section class="section">
     <p class="section-label">Мекенжай</p>
     <div class="location-card">
-      <img class="loc-img" src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80&auto=format" alt="Baq Sarai">
+      <img class="loc-img" src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&amp;q=80&amp;auto=format" alt="Baq Sarai">
       <div class="loc-overlay"></div>
       <div class="loc-content">
         <p class="loc-name">Baq Sarai</p>
-        <p class="loc-addr">Маңғыстау a.</p>
+        <p class="loc-addr">Маңғыстау а.</p>
         <a class="map-btn" href="https://2gis.kz/aktau/geo/70000001035890351" target="_blank" rel="noopener">
           📍 Картадан көру
         </a>
@@ -133,18 +124,16 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
     <p class="section-label">Құрметті кешіміздің қонағы болыңыз</p>
     <div class="rsvp-card">
       <p class="rsvp-title">Сізді күтеміз</p>
-      <p class="rsvp-subtitle">Тойымызға қатыса аласыз ба?</p>
+      <p id="rsvp-subtitle" class="rsvp-subtitle">Тойымызға қатыса аласыз ба?</p>
 
       <div id="rsvpButtons" class="rsvp-buttons">
         <button class="rsvp-btn btn-yes" onclick="handleRSVP('yes')">
           <span class="btn-icon">🤍</span>
           <span class="btn-text">Келемін</span>
-          <span class="btn-sub"></span>
         </button>
         <button class="rsvp-btn btn-no" onclick="handleRSVP('no')">
           <span class="btn-icon">🫠</span>
           <span class="btn-text">Келе алмаймын</span>
-          <span class="btn-sub"></span>
         </button>
       </div>
 
@@ -155,9 +144,9 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
       </div>
 
       <div id="noMsg">
-        <div class="no-icon">😊</div
+        <div class="no-icon">😊</div>
         <p class="no-title">Түсінеміз</p>
-        <p class="no-text"><br></p>
+        <p class="no-text">Денсаулық тілейміз!</p>
       </div>
     </div>
   </section>
@@ -172,20 +161,32 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
 </div>
 
 <script>
-function handleRSVP(choice) {
-  const buttons = document.getElementById('rsvpButtons');
-  const yesMsg = document.getElementById('successMsg');
-  const noMsg = document.getElementById('noMsg');
+const BIN_ID = '69e7e9a8856a6821895affbf';
+const API_KEY = '$2a$10$dYJnrFFP3xHry8x4HDFCgeH2gzVwMwOpTKqq3nFmfjD8IpSOLVWIO';
 
-  buttons.style.display = 'none';
-  document.querySelector('.rsvp-subtitle').style.display = 'none';
+async function handleRSVP(choice) {
+  document.getElementById('rsvpButtons').style.display = 'none';
+  document.getElementById('rsvp-subtitle').style.display = 'none';
+  document.getElementById(choice === 'yes' ? 'successMsg' : 'noMsg').style.display = 'block';
 
   if (choice === 'yes') {
-    yesMsg.style.display = 'block';
-  } else {
-    noMsg.style.display = 'block';
+    try {
+      const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+        headers: { 'X-Master-Key': API_KEY }
+      });
+      const data = await res.json();
+      const newCount = (data.record.count || 0) + 1;
+      await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', 'X-Master-Key': API_KEY },
+        body: JSON.stringify({ count: newCount })
+      });
+    } catch (e) {
+      console.error('RSVP error:', e);
+    }
   }
 }
 </script>
-</body>
-</html>
+
+
+</body></html>

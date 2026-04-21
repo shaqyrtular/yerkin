@@ -44,7 +44,7 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
 
 /* RSVP */
 .rsvp-card{background:#fff;border:1px solid rgba(150,110,90,.14);border-radius:20px;padding:28px 24px;box-shadow:0 12px 32px rgba(100,60,40,.07);text-align:center}
-.rsvp-title{font-family:'Great Vibes',cursive;font-size:44px;color:#7a1e2e;margin:6px 0 8px}
+.rsvp-title{font-family:'Cormorant Garamond',cursive;font-size:44px;color:#7a1e2e;margin:6px 0 8px}
 .rsvp-subtitle{font-family:'Cormorant Garamond',serif;font-size:16px;color:#9b7560;margin-bottom:28px;line-height:1.5}
 
 .rsvp-buttons{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:0}
@@ -57,8 +57,8 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
 .btn-yes{background:#fdf7f0;border-color:rgba(122,30,46,.25);color:#7a1e2e}
 .btn-yes:hover{background:#7a1e2e;color:#fff;border-color:#7a1e2e;transform:translateY(-2px);box-shadow:0 8px 24px rgba(122,30,46,.22)}
 
-.btn-no{background:#faf6f0;border-color:rgba(150,110,90,.22);color:#9b7560}
-.btn-no:hover{background:#f0ebe4;border-color:rgba(150,110,90,.4);transform:translateY(-2px)}
+.btn-no{background:#fdf7f0;border-color:rgba(122,30,46,.25);color:#7a1e2e}
+.btn-no:hover{background:#7a1e2e;color:#fff;border-color:#7a1e2e;transform:translateY(-2px);box-shadow:0 8px 24px rgba(122,30,46,.22)}
 
 .btn-yes.selected{background:#7a1e2e;color:#fff;border-color:#7a1e2e;box-shadow:0 8px 24px rgba(122,30,46,.22)}
 .btn-no.selected{background:#f0ebe4;border-color:rgba(150,110,90,.4);color:#6a4f40}
@@ -66,12 +66,12 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
 /* SUCCESS */
 #successMsg{display:none;padding:12px 0 4px}
 #successMsg .success-icon{font-size:40px;margin-bottom:8px}
-#successMsg .success-title{font-family:'Great Vibes',cursive;font-size:40px;color:#7a1e2e;line-height:1}
+#successMsg .success-title{font-family:'Cormorant Garamond',cursive;font-size:40px;color:#7a1e2e;line-height:1}
 #successMsg .success-text{font-family:'Cormorant Garamond',serif;font-size:17px;color:#9b7560;margin-top:8px;line-height:1.6}
 
 #noMsg{display:none;padding:12px 0 4px}
 #noMsg .no-icon{font-size:40px;margin-bottom:8px}
-#noMsg .no-title{font-family:'Great Vibes',cursive;font-size:40px;color:#9b7560;line-height:1}
+#noMsg .no-title{font-family:'Cormorant Garamond',cursive;font-size:40px;color:#9b7560;line-height:1}
 #noMsg .no-text{font-family:'Cormorant Garamond',serif;font-size:17px;color:#9b7560;margin-top:8px;line-height:1.6}
 
 .footer{padding:32px 24px 48px;text-align:center}
@@ -120,7 +120,7 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
       <div class="loc-overlay"></div>
       <div class="loc-content">
         <p class="loc-name">Baq Sarai</p>
-        <p class="loc-addr">Ақтау қ.</p>
+        <p class="loc-addr">Маңғыстау a.</p>
         <a class="map-btn" href="https://2gis.kz/aktau/geo/70000001035890351" target="_blank" rel="noopener">
           📍 Картадан көру
         </a>
@@ -139,25 +139,25 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
         <button class="rsvp-btn btn-yes" onclick="handleRSVP('yes')">
           <span class="btn-icon">🤍</span>
           <span class="btn-text">Келемін</span>
-          <span class="btn-sub">Міндетті түрде!</span>
+          <span class="btn-sub"></span>
         </button>
         <button class="rsvp-btn btn-no" onclick="handleRSVP('no')">
-          <span class="btn-icon">🙏</span>
+          <span class="btn-icon">🫠</span>
           <span class="btn-text">Келе алмаймын</span>
-          <span class="btn-sub">Кешіріңіз...</span>
+          <span class="btn-sub"></span>
         </button>
       </div>
 
       <div id="successMsg">
         <div class="success-icon">🎉</div>
-        <p class="success-title">Рақмет!</p>
-        <p class="success-text">Сізді шын жүректен күтеміз.<br>Тойда кездескенше!</p>
+        <p class="success-title">Күтеміз!</p>
+        <p class="success-text">Тойда кездескенше!</p>
       </div>
 
       <div id="noMsg">
-        <div class="no-icon">🙏</div>
-        <p class="no-title">Түсінікті</p>
-        <p class="no-text">Жоқ деп айтқаныңызға рақмет.<br>Сізге денсаулық тілейміз!</p>
+        <div class="no-icon">😊</div
+        <p class="no-title">Түсінеміз</p>
+        <p class="no-text"><br></p>
       </div>
     </div>
   </section>

@@ -29,6 +29,9 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
 
 .status{margin-top:20px;font-family:'Cormorant Garamond',serif;font-size:13px;color:#b8a090;min-height:20px}
 
+.reset-wrap{margin-top:32px;padding-top:24px;border-top:1px solid rgba(122,98,88,.1)}
+.reset-btn{background:none;border:none;font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(155,117,96,.5);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.reset-btn:hover{color:#9b7560}
 </style>
 </head>
 <body>
@@ -47,6 +50,10 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
   <button class="refresh-btn" id="refreshBtn" onclick="loadCount()">↻ Жаңарту</button>
   <p class="status" id="status">Соңғы жаңарту: 02:28</p>
 
+  <div class="reset-wrap">
+    <button class="reset-btn" onclick="resetCount()">Счётчикті нөлге қою</button>
+  </div>
+</div>
 
 <script>
 const BIN_ID = '69e7e9a8856a6821895affbf';
@@ -61,6 +68,46 @@ async function loadCount() {
   btn.classList.add('loading');
   btn.textContent = '↻ Жүктелуде...';
   status.textContent = '';
+
+  try {
+    const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+      headers: { 'X-Master-Key': API_KEY }
+    });
+    const data = await res.json();
+    const count = data.record.count || 0;
+
+    countEl.textContent = count;
+    subEl.textContent = count === 1 ? 'қонақ' : 'қонақ';
+
+    const now = new Date();
+    const time = now.toLocaleTimeString('kk-KZ', { hour: '2-digit', minute: '2-digit' });
+    status.textContent = `Соңғы жаңарту: ${time}`;
+  } catch (e) {
+    status.textContent = 'Қате шықты, қайта көріңіз';
+    countEl.textContent = '—';
+  } finally {
+    btn.classList.remove('loading');
+    btn.textContent = '↻ Жаңарту';
+  }
+}
+
+async function resetCount() {
+  if (!confirm('Счётчикті нөлге қоясыз ба?')) return;
+  try {
+    await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Master-Key': API_KEY
+      },
+      body: JSON.stringify({ count: 0 })
+    });
+    document.getElementById('count').textContent = '0';
+    document.getElementById('status').textContent = 'Счётчик нөлге қойылды';
+  } catch (e) {
+    alert('Қате шықты');
+  }
+}
 
 // Автоматически загружаем при открытии
 loadCount();

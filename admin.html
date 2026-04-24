@@ -1,41 +1,31 @@
-<html lang="kk"><head>
+<!DOCTYPE html>
+<html lang="kk">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Той — Қонақтар саны</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&amp;family=Great+Vibes&amp;family=Montserrat:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<title>Той — Админка</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-
 .card{background:#fff;border:1px solid rgba(150,110,90,.14);border-radius:24px;padding:40px 32px;max-width:360px;width:100%;text-align:center;box-shadow:0 16px 48px rgba(100,60,40,.09)}
-
 .card-label{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:#9b7560;margin-bottom:16px}
-
 .couple{font-family:'Great Vibes',cursive;font-size:46px;color:#7a1e2e;line-height:1;margin-bottom:6px}
-
-.wedding-date{font-family:'Cormorant Garamond',serif;font-size:15px;color:#9b7560;letter-spacing:.08em;margin-bottom:36px}
-
-.divider{height:1px;background:rgba(122,98,88,.15);margin-bottom:36px}
-
+.wedding-date{font-family:'Cormorant Garamond',serif;font-size:15px;color:#9b7560;letter-spacing:.08em;margin-bottom:32px}
+.divider{height:1px;background:rgba(122,98,88,.15);margin-bottom:28px}
 .counter-label{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#9b7560;margin-bottom:12px}
-
 .counter{font-family:'Great Vibes',cursive;font-size:96px;line-height:1;color:#7a1e2e;margin-bottom:6px}
-
-.counter-sub{font-family:'Cormorant Garamond',serif;font-size:16px;color:#9b7560;font-style:italic;margin-bottom:36px}
-
+.counter-sub{font-family:'Cormorant Garamond',serif;font-size:16px;color:#9b7560;font-style:italic;margin-bottom:32px}
 .refresh-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:999px;border:1.5px solid rgba(122,30,46,.22);background:transparent;color:#7a1e2e;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .2s}
 .refresh-btn:hover{background:#7a1e2e;color:#fff;border-color:#7a1e2e}
 .refresh-btn.loading{opacity:.6;pointer-events:none}
-
-.status{margin-top:20px;font-family:'Cormorant Garamond',serif;font-size:13px;color:#b8a090;min-height:20px}
-
-.reset-wrap{margin-top:32px;padding-top:24px;border-top:1px solid rgba(122,98,88,.1)}
+.status{margin-top:16px;font-family:'Cormorant Garamond',serif;font-size:13px;color:#b8a090;min-height:20px}
+.reset-wrap{margin-top:28px;padding-top:24px;border-top:1px solid rgba(122,98,88,.1)}
 .reset-btn{background:none;border:none;font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(155,117,96,.5);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .reset-btn:hover{color:#9b7560}
 </style>
 </head>
 <body>
-
 <div class="card">
   <p class="card-label">Админка</p>
   <p class="couple">Еркін &amp; Жанель</p>
@@ -43,12 +33,12 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
 
   <div class="divider"></div>
 
-  <p class="counter-label">Келемін деді</p>
-  <p class="counter" id="count">0</p>
-  <p class="counter-sub" id="count-sub">қонақ</p>
+  <p class="counter-label">🤍 Келемін деді</p>
+  <p class="counter" id="count-yes">—</p>
+  <p class="counter-sub">қонақ</p>
 
   <button class="refresh-btn" id="refreshBtn" onclick="loadCount()">↻ Жаңарту</button>
-  <p class="status" id="status">Соңғы жаңарту: 02:28</p>
+  <p class="status" id="status"></p>
 
   <div class="reset-wrap">
     <button class="reset-btn" onclick="resetCount()">Счётчикті нөлге қою</button>
@@ -56,35 +46,27 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
 </div>
 
 <script>
-const BIN_ID = '69e7e9a8856a6821895affbf';
+const BIN_ID  = '69e7e9a8856a6821895affbf';
 const API_KEY = '$2a$10$dYJnrFFP3xHry8x4HDFCgeH2gzVwMwOpTKqq3nFmfjD8IpSOLVWIO';
 
 async function loadCount() {
   const btn = document.getElementById('refreshBtn');
   const status = document.getElementById('status');
-  const countEl = document.getElementById('count');
-  const subEl = document.getElementById('count-sub');
-
   btn.classList.add('loading');
   btn.textContent = '↻ Жүктелуде...';
   status.textContent = '';
 
   try {
-    const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+    const res  = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
       headers: { 'X-Master-Key': API_KEY }
     });
     const data = await res.json();
-    const count = data.record.count || 0;
-
-    countEl.textContent = count;
-    subEl.textContent = count === 1 ? 'қонақ' : 'қонақ';
-
-    const now = new Date();
+    document.getElementById('count-yes').textContent = data.record.yes || 0;
+    const now  = new Date();
     const time = now.toLocaleTimeString('kk-KZ', { hour: '2-digit', minute: '2-digit' });
     status.textContent = `Соңғы жаңарту: ${time}`;
-  } catch (e) {
+  } catch(e) {
     status.textContent = 'Қате шықты, қайта көріңіз';
-    countEl.textContent = '—';
   } finally {
     btn.classList.remove('loading');
     btn.textContent = '↻ Жаңарту';
@@ -96,23 +78,17 @@ async function resetCount() {
   try {
     await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
       method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Master-Key': API_KEY
-      },
-      body: JSON.stringify({ count: 0 })
+      headers: { 'Content-Type': 'application/json', 'X-Master-Key': API_KEY },
+      body: JSON.stringify({ yes: 0, no: 0 })
     });
-    document.getElementById('count').textContent = '0';
-    document.getElementById('status').textContent = 'Счётчик нөлге қойылды';
-  } catch (e) {
+    document.getElementById('count-yes').textContent = '0';
+    document.getElementById('status').textContent    = 'Нөлге қойылды';
+  } catch(e) {
     alert('Қате шықты');
   }
 }
 
-// Автоматически загружаем при открытии
 loadCount();
 </script>
-
-
-
-</body></html>
+</body>
+</html>

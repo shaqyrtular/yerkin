@@ -116,7 +116,8 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
   <!-- INVITE TEXT -->
   <div class="divider"><span class="heart">♥</span></div>
   <section class="section">
-    <p class="invite-text">ҚҰРМЕТТІ АҒАЙЫ-ТУЫС, ҚҰДА-ЖЕКЖАТ, ДОС-ЖАРАНДАР!<br>Сіздерді ұлымыз бен келініміз<br><br></p>
+    <p class="invite-text">ҚҰРМЕТТІ АҒАЙЫН-ТУЫС, ҚҰДА-ЖЕКЖАТ, ДОС-ЖАРАНДАР!<br>Сіздерді ұлымыз бен келініміз
+<br><br></p>
     <div class="names">
       <span>Еркін</span>
       <span class="amp">&amp;</span>
@@ -140,8 +141,8 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
       <div class="countdown">
         <div class="cd-block"><span class="cd-num" id="cd-days">71</span><span class="cd-unit">күн</span></div>
         <div class="cd-block"><span class="cd-num" id="cd-hours">13</span><span class="cd-unit">сағат</span></div>
-        <div class="cd-block"><span class="cd-num" id="cd-mins">35</span><span class="cd-unit">мин</span></div>
-        <div class="cd-block"><span class="cd-num" id="cd-secs">30</span><span class="cd-unit">сек</span></div>
+        <div class="cd-block"><span class="cd-num" id="cd-mins">22</span><span class="cd-unit">мин</span></div>
+        <div class="cd-block"><span class="cd-num" id="cd-secs">49</span><span class="cd-unit">сек</span></div>
       </div>
       <p class="countdown-label" style="margin-top:8px;margin-bottom:0">қалды</p>
     </div>
@@ -273,19 +274,21 @@ async function handleRSVP(choice) {
   document.getElementById('rsvp-subtitle').style.display = 'none';
   document.getElementById(choice === 'yes' ? 'successMsg' : 'noMsg').style.display = 'block';
 
-  if (choice === 'yes') {
-    try {
-      const res  = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
-        headers: { 'X-Master-Key': API_KEY }
-      });
-      const data = await res.json();
-      await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json', 'X-Master-Key': API_KEY },
-        body: JSON.stringify({ count: (data.record.count || 0) + 1 })
-      });
-    } catch(e) { console.error('RSVP error:', e); }
-  }
+  try {
+    const res  = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+      headers: { 'X-Master-Key': API_KEY }
+    });
+    const data = await res.json();
+    const rec  = data.record || {};
+    await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json', 'X-Master-Key': API_KEY },
+      body: JSON.stringify({
+        yes: choice === 'yes' ? (rec.yes || 0) + 1 : (rec.yes || 0),
+        no:  choice === 'no'  ? (rec.no  || 0) + 1 : (rec.no  || 0)
+      })
+    });
+  } catch(e) { console.error('RSVP error:', e); }
 }
 </script>
 

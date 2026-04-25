@@ -92,6 +92,7 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
   <div class="divider"><span class="heart">♥</span></div>
   <section class="section">
     <p class="invite-text">ҚҰРМЕТТІ АҒАЙЫН-ТУЫС, ҚҰДА-ЖЕКЖАТ, ДОС-ЖАРАНДАР!<br>Сіздерді ұлымыз бен келініміз<br></p><br>
+
     <div class="names">
       <span>Еркін</span>
       <span class="amp">&amp;</span>
@@ -113,8 +114,8 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
       <div class="countdown">
         <div class="cd-block"><span class="cd-num" id="cd-days">71</span><span class="cd-unit">күн</span></div>
         <div class="cd-block"><span class="cd-num" id="cd-hours">12</span><span class="cd-unit">сағат</span></div>
-        <div class="cd-block"><span class="cd-num" id="cd-mins">39</span><span class="cd-unit">мин</span></div>
-        <div class="cd-block"><span class="cd-num" id="cd-secs">55</span><span class="cd-unit">сек</span></div>
+        <div class="cd-block"><span class="cd-num" id="cd-mins">34</span><span class="cd-unit">мин</span></div>
+        <div class="cd-block"><span class="cd-num" id="cd-secs">51</span><span class="cd-unit">сек</span></div>
       </div>
       <p class="countdown-label" style="margin-top:8px;margin-bottom:0">қалды</p>
     </div>
@@ -140,9 +141,9 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
   <section class="section">
     <p class="section-label">Құрметті кешіміздің қонағы болыңыз</p>
     <div class="rsvp-card">
-      <p class="rsvp-title">Сізді күтеміз</p>
-      <p id="rsvp-subtitle" class="rsvp-subtitle" style="display: none;">Тойымызға қатыса аласыз ба?</p>
-      <div id="rsvpButtons" class="rsvp-buttons" style="display: none;">
+      <p class="rsvp-title" id="rsvp-title">Сізді күтеміз</p>
+      <p id="rsvp-subtitle" class="rsvp-subtitle">Тойымызға қатыса аласыз ба?</p>
+      <div id="rsvpButtons" class="rsvp-buttons">
         <button class="rsvp-btn" onclick="handleRSVP('yes')">
           <span class="btn-icon">🤍</span>
           <span class="btn-text">Келемін</span>
@@ -152,7 +153,7 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
           <span class="btn-text">Келе алмаймын</span>
         </button>
       </div>
-      <div id="successMsg" style="display: block;">
+      <div id="successMsg">
         <div class="success-icon">🎉</div>
         <p class="success-title">Күтеміз!</p>
         <p class="success-text">Тойда кездескенше!</p>
@@ -174,7 +175,7 @@ body{background:#faf6f0;font-family:'Montserrat',sans-serif;color:#3d2c24;min-he
 </div>
 
 <div class="music-player">
-  <span class="music-label" id="music-label">Біздің ән 🎵</span>
+  <span class="music-label" id="music-label">🎵</span>
   <button class="music-ctrl" id="music-ctrl" onclick="toggleMusic()" aria-label="Play/Pause">
     <svg id="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
     <svg id="icon-pause" viewBox="0 0 24 24" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path></svg>
@@ -239,6 +240,7 @@ var FB = 'https://shaqyrtu-yerkin-default-rtdb.firebaseio.com';
 function handleRSVP(choice) {
   document.getElementById('rsvpButtons').style.display = 'none';
   document.getElementById('rsvp-subtitle').style.display = 'none';
+  document.getElementById('rsvp-title').style.display = 'none';
   document.getElementById(choice === 'yes' ? 'successMsg' : 'noMsg').style.display = 'block';
   if (choice === 'yes') saveYes();
 }

@@ -1,0 +1,340 @@
+<html lang="kk"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Еркін &amp; Жанель — Той шақыруы</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&amp;family=Great+Vibes&amp;family=Montserrat:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green-deepest: #0d1a10;
+  --green-dark:    #162a1b;
+  --green-rich:    #1e3a24;
+  --green-mid:     #2a4e32;
+  --green-muted:   #3b6145;
+  --green-soft:    #4e7a58;
+  --green-pale:    #6a9972;
+  --gold-deep:     #7a5c0a;
+  --gold-dark:     #9c7512;
+  --gold-main:     #c49a1e;
+  --gold-bright:   #d4b44a;
+  --gold-light:    #e8ce82;
+  --gold-pale:     #f4e6b8;
+  --text-main:     #f4e6b8;
+  --text-muted:    #c8b97a;
+  --text-soft:     #9aad8a;
+  --border-line:   rgba(212,180,74,0.2);
+  --border-gold:   rgba(212,180,74,0.35);
+  --shadow-warm:   rgba(13,26,16,0.35);
+  --shadow-gold:   rgba(156,117,18,0.25);
+}
+body{
+  background: var(--green-rich);
+  font-family:'Montserrat',sans-serif;
+  color: var(--text-main);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+.page{max-width:420px;margin:0 auto;position:relative}
+
+/* ===== HERO — уменьшен ===== */
+.hero{position:relative;text-align:center;padding:0;overflow:hidden}
+.hero-bg{width:100%;height:180px;object-fit:cover;object-position:center 30%;display:block;filter:brightness(0.6) sepia(0.3) hue-rotate(60deg)}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,
+    rgba(13,26,16,0.2) 0%,
+    rgba(30,58,36,0.85) 75%,
+    var(--green-rich) 100%)
+}
+
+/* ===== DIVIDER ===== */
+.divider{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  padding:24px 32px;
+}
+.divider::before,.divider::after{
+  content:'';flex:1;height:1px;
+  background: linear-gradient(to right, transparent, var(--gold-bright), transparent);
+}
+.divider-inner{display:flex;align-items:center;gap:8px;}
+.diamond{width:7px;height:7px;background:var(--gold-main);transform:rotate(45deg);flex-shrink:0;}
+.diamond-sm{width:4px;height:4px;background:var(--gold-light);transform:rotate(45deg);flex-shrink:0;}
+
+/* ===== SECTION ===== */
+.section{padding:0 24px 36px}
+.section-label{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-main);text-align:center;margin-bottom:20px;}
+.invite-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:19px;line-height:1.8;
+  color:var(--gold-pale);
+  text-align:center;padding:0 8px;
+}
+.pnames{
+  font-family:'Cormorant Garamond',serif;
+  font-size:38px;line-height:1;
+  color:var(--gold-light);
+  display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;
+}
+.names{
+  font-family:'Great Vibes',cursive;
+  font-size:50px;line-height:1;
+  color:var(--gold-bright);
+  display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;
+}
+.amp{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;color:var(--gold-main);line-height:1;}
+
+/* ===== DATE CARD ===== */
+.date-card{
+  background:var(--green-dark);border:1px solid var(--gold-bright);border-radius:20px;
+  padding:28px 36px;text-align:center;margin:0 auto;width:fit-content;
+  box-shadow:0 8px 28px var(--shadow-warm);position:relative;overflow:hidden;
+}
+.date-card::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,transparent,transparent 18px,rgba(212,180,74,0.04) 18px,rgba(212,180,74,0.04) 19px);
+  pointer-events:none;
+}
+.date-month{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-main);}
+.date-day{font-family:'Great Vibes',cursive;font-size:80px;line-height:.9;color:var(--gold-bright);margin:6px 0 2px;}
+.date-weekday{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--gold-light);letter-spacing:.06em;}
+
+/* ===== COUNTDOWN ===== */
+.countdown-wrap{margin-top:18px}
+.countdown-label{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-main);text-align:center;margin-bottom:10px;}
+.countdown{display:flex;justify-content:center;gap:10px}
+.cd-block{display:flex;flex-direction:column;align-items:center;background:var(--green-dark);border:1px solid var(--gold-bright);border-radius:14px;padding:12px 16px;min-width:60px;box-shadow:0 4px 12px var(--shadow-warm);}
+.cd-num{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;line-height:1;color:var(--gold-bright);}
+.cd-unit{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-main);margin-top:4px;}
+
+/* ===== LOCATION CARD ===== */
+.location-card{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 8px 28px var(--shadow-warm);border:1px solid var(--gold-bright);}
+.loc-img{width:100%;height:170px;object-fit:cover;display:block;filter:brightness(.55) sepia(.4) hue-rotate(60deg)}
+.loc-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,26,16,0.4),rgba(22,42,27,0.92));}
+.loc-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:20px;text-align:center;color:#fff;}
+.loc-name{font-family:'Great Vibes',cursive;font-size:40px;line-height:1;color:var(--gold-light);}
+.loc-addr{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(240,237,224,0.82);margin:6px 0 14px;}
+.map-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 24px;border-radius:999px;border:1px solid var(--gold-bright);background:rgba(196,154,30,0.2);color:var(--gold-light);font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;backdrop-filter:blur(10px);transition:background .22s,transform .18s;}
+.map-btn:hover{background:rgba(196,154,30,0.4);transform:translateY(-1px)}
+
+/* ===== RSVP CARD ===== */
+.rsvp-card{background:var(--green-dark);border:1px solid var(--gold-bright);border-radius:20px;padding:30px 24px;box-shadow:0 8px 28px var(--shadow-warm);text-align:center;}
+.rsvp-title{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--gold-bright);margin:6px 0 8px;}
+.rsvp-subtitle{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--gold-main);margin-bottom:28px;line-height:1.5;}
+.rsvp-buttons{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.rsvp-btn{padding:18px 12px;border-radius:16px;border:1px solid var(--gold-bright);font-family:'Montserrat',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all .22s;display:flex;flex-direction:column;align-items:center;gap:8px;line-height:1.3;background:var(--green-mid);color:var(--gold-light);}
+.rsvp-btn:hover{background:var(--gold-main);color:var(--green-deepest);border-color:var(--gold-bright);transform:translateY(-2px);box-shadow:0 6px 18px var(--shadow-warm);}
+.btn-icon{font-size:26px;line-height:1}
+.btn-text{font-size:13px;letter-spacing:.04em}
+#successMsg{display:none;padding:12px 0 4px}
+#successMsg .success-icon{font-size:40px;margin-bottom:8px}
+#successMsg .success-title{font-family:'Cormorant Garamond',serif;font-size:42px;color:var(--gold-bright);line-height:1}
+#successMsg .success-text{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--gold-main);margin-top:8px;line-height:1.6}
+#noMsg{display:none;padding:12px 0 4px}
+#noMsg .no-icon{font-size:40px;margin-bottom:8px}
+#noMsg .no-title{font-family:'Cormorant Garamond',serif;font-size:42px;color:var(--gold-light);line-height:1}
+
+/* ===== FOOTER ===== */
+.footer{padding:32px 24px 56px;text-align:center;position:relative}
+.footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60px;height:1px;background:linear-gradient(to right,transparent,var(--gold-main),transparent);}
+.footer-label{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-main)}
+.footer-names{font-family:'Great Vibes',cursive;font-size:52px;color:var(--gold-bright);line-height:1;margin:10px 0 6px;}
+.footer-note{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--gold-main);letter-spacing:.1em;}
+
+/* ===== MUSIC PLAYER ===== */
+.music-player{position:fixed;bottom:24px;right:20px;z-index:999}
+.music-disc-wrap{position:relative;width:64px;height:64px;cursor:pointer}
+.music-disc{width:100%;height:100%;border-radius:50%;background:conic-gradient(var(--green-deepest) 0deg,var(--green-mid) 60deg,var(--gold-deep) 60deg,var(--gold-dark) 120deg,var(--green-dark) 120deg,var(--green-rich) 180deg,var(--gold-deep) 180deg,var(--green-mid) 240deg,var(--gold-main) 240deg,var(--green-dark) 300deg,var(--green-deepest) 300deg,var(--gold-dark) 360deg);box-shadow:0 6px 20px var(--shadow-warm);animation:spin 8s linear infinite;animation-play-state:paused;position:relative;display:flex;align-items:center;justify-content:center;}
+.music-disc.playing{animation-play-state:running}
+.music-disc::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:24px;height:24px;border-radius:50%;background:var(--green-rich);z-index:1;}
+.music-note-icon{position:relative;z-index:2;font-size:18px;color:var(--gold-bright);line-height:1;}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO — только фото, без пустого места -->
+  <section class="hero">
+    <img class="hero-bg" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&amp;q=80&amp;auto=format" alt="">
+    <div class="hero-overlay"></div>
+  </section>
+
+  <!-- INVITE TEXT — сразу после фото -->
+  <section class="section" style="padding-top:28px">
+    <p class="invite-text">ҚҰРМЕТТІ АҒАЙЫН-ТУЫС, БАУЫРЛАР, ҚҰДА-ЖЕКЖАТ, НАҒАШЫ-ЖИЕН, БӨЛЕЛЕР, ДОС-ЖАРАН, ӘРІПТЕСТЕР МЕН КӨРШІЛЕР!<br><br>Сіздерді ұлымыз бен келініміз</p>
+    <br>
+    <div class="names">
+      <span>Еркін</span>
+      <span class="amp">&amp;</span>
+      <span>Жанель</span>
+    </div>
+    <br>
+    <p class="invite-text">шаңырақ көтеру тойына арналған салтанатты ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
+    <br>
+    <div class="divider" style="padding:12px 0">
+      <div class="divider-inner">
+        <div class="diamond-sm"></div><div class="diamond"></div><div class="diamond-sm"></div>
+      </div>
+    </div>
+    <p class="invite-text">ТОЙ ИЕЛЕРІ</p>
+    <div style="margin-top:8px">
+      <div class="pnames">
+        <span>АБАЙ</span>
+        <span class="amp">&amp;</span>
+        <span>ҚЫРМЫЗЫ</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">
+    <div class="divider-inner">
+      <div class="diamond-sm"></div><div class="diamond"></div><div class="diamond-sm"></div>
+    </div>
+  </div>
+
+  <!-- DATE + COUNTDOWN -->
+  <section class="section" style="padding-bottom:16px">
+    <div class="date-card">
+      <p class="date-month">ㅤㅤㅤㅤㅤШілденіңㅤㅤㅤㅤㅤ</p>
+      <p class="date-day">5</p>
+      <p class="date-weekday">Жексенбі, 2026</p>
+    </div>
+    <div class="countdown-wrap">
+      <p class="countdown-label">Тойға дейін</p>
+      <div class="countdown">
+        <div class="cd-block"><span class="cd-num" id="cd-days">69</span><span class="cd-unit">күн</span></div>
+        <div class="cd-block"><span class="cd-num" id="cd-hours">01</span><span class="cd-unit">сағат</span></div>
+        <div class="cd-block"><span class="cd-num" id="cd-mins">56</span><span class="cd-unit">мин</span></div>
+        <div class="cd-block"><span class="cd-num" id="cd-secs">08</span><span class="cd-unit">сек</span></div>
+      </div>
+      <p class="countdown-label" style="margin-top:10px;margin-bottom:0">қалды</p>
+    </div>
+  </section>
+
+  <div class="divider">
+    <div class="divider-inner">
+      <div class="diamond-sm"></div><div class="diamond"></div><div class="diamond-sm"></div>
+    </div>
+  </div>
+
+  <!-- LOCATION -->
+  <section class="section" style="padding-bottom:0">
+    <p class="section-label">Мекенжай</p>
+    <div class="location-card">
+      <img class="loc-img" src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&amp;q=80&amp;auto=format" alt="Baq Sarai" loading="lazy">
+      <div class="loc-overlay"></div>
+      <div class="loc-content">
+        <p class="loc-name">Baq Sarai</p>
+        <p class="loc-addr">Маңғыстау а.</p>
+        <a class="map-btn" href="https://2gis.kz/aktau/geo/70000001035890351" target="_blank" rel="noopener">📍 Картадан көру</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">
+    <div class="divider-inner">
+      <div class="diamond-sm"></div><div class="diamond"></div><div class="diamond-sm"></div>
+    </div>
+  </div>
+
+  <!-- RSVP -->
+  <section class="section">
+    <p class="section-label">Құрметті кешіміздің қонағы болыңыз</p>
+    <div class="rsvp-card">
+      <p class="rsvp-title" id="rsvp-title">Сізді күтеміз</p>
+      <p id="rsvp-subtitle" class="rsvp-subtitle">Тойымызға қатыса аласыз ба?</p>
+      <div id="rsvpButtons" class="rsvp-buttons">
+        <button class="rsvp-btn" onclick="handleRSVP('yes')">
+          <span class="btn-icon">🤍</span>
+          <span class="btn-text">Келемін</span>
+        </button>
+        <button class="rsvp-btn" onclick="handleRSVP('no')">
+          <span class="btn-icon">🫠</span>
+          <span class="btn-text">Келе алмаймын</span>
+        </button>
+      </div>
+      <div id="successMsg">
+        <div class="success-icon">🎉</div>
+        <p class="success-title">Күтеміз!</p>
+        <p class="success-text">Тойда кездескенше!</p>
+      </div>
+      <div id="noMsg">
+        <div class="no-icon">😊</div>
+        <p class="no-title">Түсінеміз</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">
+    <div class="divider-inner">
+      <div class="diamond-sm"></div><div class="diamond"></div><div class="diamond-sm"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p class="footer-label">Тойымыздың куәгері болыңыз</p>
+    <p class="footer-names">Еркін &amp; Жанель</p>
+    <p class="footer-note">Махаббатпен • 2026</p>
+  </footer>
+
+</div>
+
+<!-- MUSIC PLAYER -->
+<div class="music-player">
+  <div class="music-disc-wrap" onclick="toggleMusic()">
+    <div class="music-disc playing" id="music-disc">
+      <span class="music-note-icon">♫</span>
+    </div>
+  </div>
+</div>
+
+<audio id="audio" loop="">
+  <source src="https://www.image2url.com/r2/default/audio/1777070424435-752a65a2-e41c-4540-83fe-18a555574941.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+var audio = document.getElementById('audio');
+var disc  = document.getElementById('music-disc');
+var playing = false;
+
+function toggleMusic() {
+  if (playing) { audio.pause(); disc.classList.remove('playing'); }
+  else { audio.play().catch(function(){}); disc.classList.add('playing'); }
+  playing = !playing;
+}
+
+var weddingDate = new Date('2026-07-05T18:00:00');
+function pad(n){return String(n).padStart(2,'0');}
+function updateCountdown(){
+  var diff = weddingDate - new Date();
+  if(diff<=0){['cd-days','cd-hours','cd-mins','cd-secs'].forEach(function(id){document.getElementById(id).textContent='00';});return;}
+  document.getElementById('cd-days').textContent  = pad(Math.floor(diff/86400000));
+  document.getElementById('cd-hours').textContent = pad(Math.floor((diff%86400000)/3600000));
+  document.getElementById('cd-mins').textContent  = pad(Math.floor((diff%3600000)/60000));
+  document.getElementById('cd-secs').textContent  = pad(Math.floor((diff%60000)/1000));
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+var FB = 'https://shaqyrtu-yerkin-default-rtdb.firebaseio.com';
+function handleRSVP(choice){
+  document.getElementById('rsvpButtons').style.display='none';
+  document.getElementById('rsvp-subtitle').style.display='none';
+  document.getElementById('rsvp-title').style.display='none';
+  document.getElementById(choice==='yes'?'successMsg':'noMsg').style.display='block';
+  if(choice==='yes') saveYes();
+}
+function saveYes(){
+  fetch(FB+'/rsvp/yes.json')
+    .then(function(r){return r.json();})
+    .then(function(cur){
+      var next=(cur||0)+1;
+      return fetch(FB+'/rsvp/yes.json',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(next)});
+    })
+    .then(function(){console.log('RSVP OK');})
+    .catch(function(e){console.error('RSVP error:',e);});
+}
+</script>
+
+</body></html>
